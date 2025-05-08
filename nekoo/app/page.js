@@ -135,33 +135,22 @@ export default function Home() {
         </div>
       </div>
       
-      <div className={styles.platformContainer}>
-        <motion.p 
-          className={styles.platformText}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
-        >
-          Available on
-        </motion.p>
-        <motion.div 
-          className={styles.platformIcons}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <div className={styles.platformIcon}></div>
-          <div className={styles.platformIcon}></div>
-          <div className={styles.platformIcon}></div>
-          <div className={styles.platformIcon}></div>
-          <div className={styles.platformIcon}></div>
-        </motion.div>
-      </div>
+      {/* Platform icons section removed */}
 
       <div className={styles.features}>
         <AnimatedSection delay={0.1}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}></div>
+            <div className={styles.featureIcon}>
+              <div className={styles.iconPlaceholder}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M10 9H9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
             <h3>Tracking</h3>
             <p>Automatically keep track of your series with MyAnimeList, AniList, Kitsu, and more.</p>
             <a href="#" className={styles.featureLink}>Setup tracking →</a>
@@ -170,7 +159,15 @@ export default function Home() {
 
         <AnimatedSection delay={0.3}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}></div>
+            <div className={styles.featureIcon}>
+              <div className={styles.iconPlaceholder}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3H21V21H3V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 9H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
             <h3>Customization</h3>
             <p>Make it yours with multiple reading modes, custom color filters, and many other settings.</p>
             <a href="#" className={styles.featureLink}>Get started →</a>
@@ -179,7 +176,15 @@ export default function Home() {
 
         <AnimatedSection delay={0.5}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}></div>
+            <div className={styles.featureIcon}>
+              <div className={styles.iconPlaceholder}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.25C6.62 2.25 2.25 6.62 2.25 12C2.25 17.38 6.62 21.75 12 21.75C17.38 21.75 21.75 17.38 21.75 12C21.75 6.62 17.38 2.25 12 2.25Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2.25 12H21.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 2.25C14.4853 2.25 16.5 6.62 16.5 12C16.5 17.38 14.4853 21.75 12 21.75C9.51472 21.75 7.5 17.38 7.5 12C7.5 6.62 9.51472 2.25 12 2.25Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
             <h3>Extensions</h3>
             <p>Bring your own content from a variety of sources with our extensible plugin system.</p>
             <a href="#" className={styles.featureLink}>Browse extensions →</a>
