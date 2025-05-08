@@ -152,6 +152,7 @@ export default function Home() {
             width={300}
             height={600}
             className={styles.phoneImage}
+            sizes="(max-width: 768px) 100vw, 300px"
             priority
           />
         </motion.div>
