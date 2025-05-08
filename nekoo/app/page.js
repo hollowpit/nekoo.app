@@ -2,7 +2,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import Image from 'next/image';
 import styles from './page.module.css';
 import Navbar from './components/Navbar';
 import { motion, useAnimation, useInView } from 'framer-motion';
@@ -94,67 +93,67 @@ export default function Home() {
       <Navbar />
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <motion.h1 
-            className={styles.logo}
+          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             <AnimatedText text="Aniyomi" className={styles.logo} />
-          </motion.h1>
+          </motion.div>
           
-          <motion.h2 
-            className={styles.title}
+          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <AnimatedText 
-              text="Full-featured player and reader, based on Tachiyomi Mihon." 
+              text="is the new way to stream anime torrents." 
               className={styles.title} 
             />
-          </motion.h2>
+          </motion.div>
           
           <motion.p 
             className={styles.subtitle}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Discover and watch anime, cartoons, series, and more – easier than ever on your Android device.
+            Stream anime torrents real-time with no waiting for downloads.
+            Choose your own codec, without any paywall or watermark.
           </motion.p>
           
           <motion.div 
             className={styles.buttonGroup}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <button className={styles.primaryButton}>Get started</button>
-            <button className={styles.secondaryButton}>Download</button>
+            <button className={styles.primaryButton}>Download now</button>
+            <button className={styles.secondaryButton}>Fork release</button>
           </motion.div>
         </div>
-        
-        <motion.div 
-          className={styles.imageContainer}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ 
-            duration: 1.2, 
-            delay: 0.4,
-            type: "spring",
-            stiffness: 100
-          }}
+      </div>
+      
+      <div className={styles.platformContainer}>
+        <motion.p 
+          className={styles.platformText}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <Image 
-            src="/phone-mockup.png" 
-            alt="Aniyomi app on mobile device" 
-            width={300}
-            height={600}
-            className={styles.phoneImage}
-            sizes="(max-width: 768px) 100vw, 300px"
-            priority
-          />
+          Available on
+        </motion.p>
+        <motion.div 
+          className={styles.platformIcons}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <div className={styles.platformIcon}></div>
+          <div className={styles.platformIcon}></div>
+          <div className={styles.platformIcon}></div>
+          <div className={styles.platformIcon}></div>
+          <div className={styles.platformIcon}></div>
         </motion.div>
       </div>
 
