@@ -25,22 +25,43 @@ export default function AnimatedBackground() {
       const numberOfSpots = 10;
       spots.length = 0;
       
+      // Colors from the image (pastel and vibrant colors with white theme)
+      const colors = [
+        '#FF61D8', // Pink
+        '#5D85FF', // Blue
+        '#00C2FF', // Cyan
+        '#00FFB3', // Mint
+        '#FFDD00', // Yellow
+        '#FF6B00', // Orange
+        '#FF3373', // Red
+        '#9D6FFF'  // Purple
+      ];
+      
       for (let i = 0; i < numberOfSpots; i++) {
         spots.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           radius: Math.random() * 300 + 200,
-          color: getRandomColor(),
-          vx: Math.random() * 0.5 - 0.25,
-          vy: Math.random() * 0.5 - 0.25,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() * 0.8 - 0.4) * 1.5, // 1.5x faster
+          vy: (Math.random() * 0.8 - 0.4) * 1.5, // 1.5x faster
         });
       }
     };
     
-    // Generate random vibrant colors
+    // Use predefined colors
     function getRandomColor() {
-      const hue = Math.floor(Math.random() * 360);
-      return `hsl(${hue}, 80%, 60%)`;
+      const colors = [
+        '#FF61D8', // Pink
+        '#5D85FF', // Blue
+        '#00C2FF', // Cyan
+        '#00FFB3', // Mint
+        '#FFDD00', // Yellow
+        '#FF6B00', // Orange
+        '#FF3373', // Red
+        '#9D6FFF'  // Purple
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
     }
     
     // Draw the gradient background
