@@ -33,9 +33,9 @@
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--foreground);
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .subtitle {
@@ -44,6 +44,7 @@
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  max-width: 540px;
 }
 
 .buttonGroup {
@@ -113,6 +114,8 @@
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  min-height: 220px;
 }
 
 .featureIcon {
@@ -129,6 +132,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--foreground);
+  margin-bottom: 0.25rem;
 }
 
 .featureCard p {
@@ -136,6 +140,7 @@
   line-height: 1.5;
   font-size: 0.95rem;
   margin-bottom: 1rem;
+  flex-grow: 1;
 }
 
 .featureLink {

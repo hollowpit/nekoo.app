@@ -186,7 +186,8 @@ export default function Home() {
               <Image src="/globe.svg" alt="Extensions icon" width={24} height={24} />
             </div>
             <h3>Extensions</h3>
-            <p>Bring your own content from a variety of sources.</p>
+            <p>Bring your own content from a variety of sources with our extensible plugin system.</p>
+            <a href="#" className={styles.featureLink}>Browse extensions →</a>
           </div>
         </AnimatedSection>
       </div>
