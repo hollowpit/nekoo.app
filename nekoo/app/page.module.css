@@ -50,6 +50,8 @@
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 540px;
+  word-break: break-word; /* Added to handle text overflow */
+  overflow-wrap: break-word; /* Added to handle text overflow */
 }
 
 .buttonGroup {
@@ -192,7 +194,7 @@
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 6rem 1.5rem 4rem;
+    padding: 7rem 1.5rem 4rem; /* Updated padding */
     min-height: auto;
   }
 
@@ -214,6 +216,8 @@
     font-size: 1rem;
     margin-bottom: 1.5rem;
     padding: 0 0.5rem;
+    word-break: break-word; /* Added to handle text overflow */
+    overflow-wrap: break-word; /* Added to handle text overflow */
   }
 
   .buttonGroup {
