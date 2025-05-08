@@ -22,51 +22,43 @@ export default function AnimatedBackground() {
     // Create gradient spots
     const spots = [];
     const createSpots = () => {
-      const numberOfSpots = 10;
+      // More spots for a denser effect
+      const numberOfSpots = 15;
       spots.length = 0;
       
-      // Colors from the image (pastel and vibrant colors with white theme)
+      // Colors from the image - more vibrant and saturated
       const colors = [
-        '#FF61D8', // Pink
-        '#5D85FF', // Blue
-        '#00C2FF', // Cyan
-        '#00FFB3', // Mint
-        '#FFDD00', // Yellow
-        '#FF6B00', // Orange
-        '#FF3373', // Red
-        '#9D6FFF'  // Purple
+        'rgba(0, 255, 80, 0.7)',   // Bright Green
+        'rgba(0, 150, 255, 0.7)',  // Bright Blue
+        'rgba(255, 0, 150, 0.7)',  // Magenta
+        'rgba(170, 0, 255, 0.7)',  // Purple
+        'rgba(255, 50, 100, 0.7)', // Pink/Red
+        'rgba(0, 200, 180, 0.7)',  // Teal
+        'rgba(120, 255, 0, 0.7)',  // Lime
       ];
       
       for (let i = 0; i < numberOfSpots; i++) {
         spots.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          radius: Math.random() * 300 + 200,
+          // Much larger radius to match the image
+          radius: Math.random() * 400 + 350,
           color: colors[Math.floor(Math.random() * colors.length)],
-          vx: (Math.random() * 0.8 - 0.4) * 1.5, // 1.5x faster
-          vy: (Math.random() * 0.8 - 0.4) * 1.5, // 1.5x faster
+          // Slower movement for larger blobs
+          vx: (Math.random() * 0.4 - 0.2),
+          vy: (Math.random() * 0.4 - 0.2),
         });
       }
     };
     
-    // Use predefined colors
-    function getRandomColor() {
-      const colors = [
-        '#FF61D8', // Pink
-        '#5D85FF', // Blue
-        '#00C2FF', // Cyan
-        '#00FFB3', // Mint
-        '#FFDD00', // Yellow
-        '#FF6B00', // Orange
-        '#FF3373', // Red
-        '#9D6FFF'  // Purple
-      ];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-    
     // Draw the gradient background
     const drawBackground = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Start with a semi-transparent white background
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Use screen blend mode for more vibrant overlaps
+      ctx.globalCompositeOperation = 'screen';
       
       // Create gradient with multiple color spots
       for (const spot of spots) {
@@ -75,10 +67,11 @@ export default function AnimatedBackground() {
           spot.x, spot.y, spot.radius
         );
         
+        // More gradual fade for a softer look
         gradient.addColorStop(0, spot.color);
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        gradient.addColorStop(0.6, spot.color.replace('0.7', '0.3'));
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
         
-        ctx.globalCompositeOperation = 'lighter';
         ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(spot.x, spot.y, spot.radius, 0, Math.PI * 2);
@@ -88,11 +81,12 @@ export default function AnimatedBackground() {
         spot.x += spot.vx;
         spot.y += spot.vy;
         
-        // Bounce off edges
-        if (spot.x < -spot.radius || spot.x > canvas.width + spot.radius) {
+        // Bounce off edges with padding
+        const padding = spot.radius * 0.3;
+        if (spot.x < -padding || spot.x > canvas.width + padding) {
           spot.vx = -spot.vx;
         }
-        if (spot.y < -spot.radius || spot.y > canvas.height + spot.radius) {
+        if (spot.y < -padding || spot.y > canvas.height + padding) {
           spot.vy = -spot.vy;
         }
       }
@@ -118,6 +112,7 @@ export default function AnimatedBackground() {
     <canvas 
       ref={canvasRef} 
       className="fixed top-0 left-0 w-full h-full -z-10" 
+      style={{ background: 'white' }}
     />
   );
 }
