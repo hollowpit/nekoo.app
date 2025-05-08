@@ -62,8 +62,16 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+  
   .container {
     padding: 0 1.5rem;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
   }
   
   .links {
@@ -76,5 +84,16 @@
   
   .downloadButton {
     padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .downloadButton {
+    padding: 0.4rem 0.8rem;
   }
 }
