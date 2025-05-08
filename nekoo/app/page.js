@@ -1,10 +1,12 @@
 
 import Image from 'next/image';
 import styles from './page.module.css';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Navbar />
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.logo}>Aniyomi</h1>

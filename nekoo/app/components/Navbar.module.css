@@ -1,0 +1,80 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  backdrop-filter: blur(8px);
+  background-color: rgba(18, 18, 18, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.downloadButton {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.downloadButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .links {
+    gap: 1rem;
+  }
+  
+  .navLink {
+    display: none;
+  }
+  
+  .downloadButton {
+    padding: 0.5rem 1rem;
+  }
+}
