@@ -6,6 +6,7 @@ import styles from './page.module.css';
 import Navbar from './components/Navbar';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 // Animated component with fade-in effect on scroll
 function AnimatedSection({ children, delay = 0 }) {
@@ -160,9 +161,7 @@ export default function Home() {
       <div className={styles.features}>
         <AnimatedSection delay={0.1}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>
-              <Image src="/file.svg" alt="Tracking icon" width={24} height={24} />
-            </div>
+            <div className={styles.featureIcon}></div>
             <h3>Tracking</h3>
             <p>Automatically keep track of your series with MyAnimeList, AniList, Kitsu, and more.</p>
             <a href="#" className={styles.featureLink}>Setup tracking →</a>
@@ -171,9 +170,7 @@ export default function Home() {
 
         <AnimatedSection delay={0.3}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>
-              <Image src="/window.svg" alt="Customization icon" width={24} height={24} />
-            </div>
+            <div className={styles.featureIcon}></div>
             <h3>Customization</h3>
             <p>Make it yours with multiple reading modes, custom color filters, and many other settings.</p>
             <a href="#" className={styles.featureLink}>Get started →</a>
@@ -182,9 +179,7 @@ export default function Home() {
 
         <AnimatedSection delay={0.5}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>
-              <Image src="/globe.svg" alt="Extensions icon" width={24} height={24} />
-            </div>
+            <div className={styles.featureIcon}></div>
             <h3>Extensions</h3>
             <p>Bring your own content from a variety of sources with our extensible plugin system.</p>
             <a href="#" className={styles.featureLink}>Browse extensions →</a>
